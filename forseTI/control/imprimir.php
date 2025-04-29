@@ -199,7 +199,7 @@ if (mysqli_query($connect, $sql)) {
 
     <div class="content print-content">
         <div class="normal"> <?php echo $nome."<br>".$cat." 0".$num; ?></div>
-        <div class="text">UniSenac RS - Campus Porto Alegre</div>
+        <div class="text">DLTech - Di Leone Technology</div>
         <div class="date">Porto Alegre, <?php echo date("d/m/Y H:i"); ?></div>
     </div>
 
