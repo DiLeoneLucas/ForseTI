@@ -11,16 +11,16 @@ if (empty($username) || empty($password)) {
 }
 
 // Configurações do LDAP
-$ldap_server = "ldap://192.168.0.1";
+$ldap_server = "" //IP do server de domínio;
 $ldap_port = 389;
-$base_dn = "DC=fspoa,DC=br";
+$base_dn = "DC=teste,DC=br"; //Domínio
 
 // Configuração do usuário técnico de leitura (somente para consulta)
-$ldap_user_tech = "ejcorte@fspoa.br";  // Usuário técnico com permissões de leitura
-$ldap_pass_tech = "senac@2025";  // Senha do usuário técnico de leitura
+$ldap_user_tech = "";  // Usuário técnico com permissões de leitura
+$ldap_pass_tech = "";  // Senha do usuário técnico de leitura
 
 // Monta o usuário no formato dominio\usuario
-$ldap_user = $username."@fspoa.br";
+$ldap_user = $username."@teste.br";
 $ldap_pass = $password;
 
 // Conecta ao servidor LDAP
