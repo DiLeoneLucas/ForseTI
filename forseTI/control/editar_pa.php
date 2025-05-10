@@ -2,8 +2,19 @@
 
 @session_start();
 
+$sessao = @$_SESSION['sessao'];
+
+if($sessao == null){
+    header("Location: login.php");
+}
+
+
 $nome_usuario = $_SESSION['nome_full'];
 $tipo_user = $_SESSION['tipo_user'];
+
+if($tipo_user != 'TI'){
+    header("Location: dashboard.php?erro=2");
+}
 
 
 ?>

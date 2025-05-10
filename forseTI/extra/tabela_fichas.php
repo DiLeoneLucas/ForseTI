@@ -12,8 +12,9 @@ if($controle > 0){
     echo '<table>
     <thead>
         <tr>
-            <th>Tipo</th>
             <th>Senha</th>
+            <th>Tipo</th>
+            <th>Categoria</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -22,13 +23,15 @@ if($controle > 0){
     while($linha = mysqli_fetch_assoc($q_consulta)){
         $idFicha = $linha['id_ficha'];
         $tipo = $linha['tipo'];
+        $cat = $linha['categoria'];
         $modalId = 'modalPreferencial_' . $idFicha;
         $fichaText = strtoupper($tipo) . ' ' . str_pad($idFicha, 3, '0', STR_PAD_LEFT) . ' - Atendimento na PA 0' . $idFicha;
 
         echo '
         <tr>
-            <td>'.$tipo.'</td>
             <td>'.$idFicha.'</td>
+            <td>'.$tipo.'</td>
+            <td>'.$cat.'</td>
             <td><button class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#'.$modalId.'">Pegar</button></td>
         </tr>
 

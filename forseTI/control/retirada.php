@@ -67,12 +67,12 @@
         <h1 class="mb-4">SELECIONE A OPÇÃO</h1>
 
         <form action="cat.php" method="POST">
-            <input type="hidden" name="option" value="1">
+            <input type="hidden" name="option" value="NORMAL">
             <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">NORMAL</button>
         </form>
 
         <form action="cat.php" method="POST">
-            <input type="hidden" name="option" value="2">
+            <input type="hidden" name="option" value="PREFERENCIAL">
             <button type="submit" class="btn btn-orange btn-lg w-100 mb-3">PREFERENCIAL</button>
         </form>
 

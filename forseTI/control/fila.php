@@ -2,6 +2,12 @@
 
 @session_start();
 
+$sessao = @$_SESSION['sessao'];
+
+if($sessao == null){
+    header("Location: login.php");
+}
+
 @$nome_usuario = $_SESSION['nome_full'];
 @$tipo_user = $_SESSION['tipo_user'];
 

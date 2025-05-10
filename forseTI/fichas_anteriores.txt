@@ -1,1 +1,5 @@
-
+Preferencial 7 - Atendimento no Guichê 2
+Financeiro 5 - Atendimento no Guichê 2
+Financeiro 4 - Atendimento na PA 
+Preferencial 5 - Atendimento na PA 
+Financeiro 7 - Atendimento na PA 

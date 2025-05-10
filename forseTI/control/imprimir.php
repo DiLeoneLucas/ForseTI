@@ -135,20 +135,31 @@ if (mysqli_query($connect, $sql)) {
             display: none;
         }
     </style>
-    <script>
-        function showLoading() {
-            document.getElementById('loading').style.display = 'flex';
-        }
-        window.onload = function () {
-            var printButton = document.getElementById("imprimir");
+<script>
+    function showLoading() {
+        document.getElementById('loading').style.display = 'flex';
+    }
+    window.onload = function () {
+        var printButton = document.getElementById("imprimir");
+        setTimeout(() => {
+            printButton.click();
+        }, 1000);
+
+        window.onafterprint = function () {
+            // Exibe o botão como fallback
+            const btn = document.getElementById('continue-btn');
+            if (btn) {
+                btn.style.display = 'block';
+            }
+
+            // Redireciona automaticamente após 2 segundos
             setTimeout(() => {
-                printButton.click();
-            }, 1000);
-            window.onafterprint = function () {
-                document.getElementById('continue-btn').style.display = 'block';
-            };
+                window.location.href = 'retirada.php';
+            }, 2000);
         };
-    </script>
+    };
+</script>
+
 </head>
 <body class="d-flex flex-column justify-content-center align-items-center vh-100">
 
@@ -199,7 +210,7 @@ if (mysqli_query($connect, $sql)) {
 
     <div class="content print-content">
         <div class="normal"> <?php echo $nome."<br>".$cat." 0".$num; ?></div>
-        <div class="text">DLTech - Di Leone Technology</div>
+        <div class="text">UniSenac RS - Campus Porto Alegre</div>
         <div class="date">Porto Alegre, <?php echo date("d/m/Y H:i"); ?></div>
     </div>
 

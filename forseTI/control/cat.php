@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$_SESSION['tipo_de_ficha'] = $_POST['option'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+$sessao = @$_SESSION['sessao'];
+
+if($sessao == null){
+    header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>

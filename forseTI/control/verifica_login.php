@@ -43,10 +43,9 @@ if($controle>0){
 	session_start();
 	$_SESSION['sessao'] = $ses;
 
-header("Location: dashboard.php");
+header("Location: tv.php");
+exit();
 	
-}else{
-	header("Location: login.php?erro=1");
-	}
+}
 
 ?>

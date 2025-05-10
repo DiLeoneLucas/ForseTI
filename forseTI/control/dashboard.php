@@ -1,6 +1,13 @@
 <?php
+require_once("../extra/erro.php");
 
 @session_start();
+
+$sessao = @$_SESSION['sessao'];
+
+if($sessao == null){
+    header("Location: login.php");
+}
 
 $nome_usuario = $_SESSION['nome_full'];
 $tipo_user = $_SESSION['tipo_user'];
@@ -157,6 +164,9 @@ $tipo_user = $_SESSION['tipo_user'];
             bottom: 0;
             width: 100%;
         }
+        .modal-body {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -219,6 +229,11 @@ require_once("../extra/menu_lateral.php");
 
         console.log("Script do menu lateral carregado.");
     });
+    const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('erro')) {
+            var erroModal = new bootstrap.Modal(document.getElementById('erroModal'));
+            erroModal.show();
+        }
 </script>
 </body>
 </html>

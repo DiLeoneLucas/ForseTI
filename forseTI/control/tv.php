@@ -1,12 +1,37 @@
 <?php
+session_start();
+
+$sessao = @$_SESSION['sessao'];
+
+if($sessao == null){
+    header("Location: login.php");
+}
+
 require_once("../control/db_classes.php");
 
 $texto_ficha = "";
 
 // Lê o conteúdo da ficha atual
+// Lê o conteúdo da ficha atual
 if (file_exists("../ficha_atual.txt")) {
     $texto_ficha = trim(file_get_contents("../ficha_atual.txt"));
+
+    // Atualiza fichas_anteriores.txt mantendo no máximo 5 entradas
+    if (!empty($texto_ficha)) {
+        $caminhoArquivo = "../fichas_anteriores.txt";
+        $linhas = file($caminhoArquivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        // Adiciona nova ficha ao topo
+        array_unshift($linhas, $texto_ficha);
+
+        // Mantém só as 5 mais recentes
+        $linhas = array_slice($linhas, 0, 5);
+
+        // Grava novamente no arquivo
+        file_put_contents($caminhoArquivo, implode(PHP_EOL, $linhas));
+    }
 }
+
 
 // Lê o histórico anterior
 $fichas_anteriores = [];
