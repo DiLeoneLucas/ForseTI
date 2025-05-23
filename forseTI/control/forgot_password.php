@@ -44,7 +44,7 @@
         <h1>Esqueceu a senha para acessar o ForseTI?</h1>
         <p>Bom dia, boa tarde ou boa noite caro usuário,</p>
         <p>O seu usuário e a sua senha para acessar o ForseTI é a <b>mesma de rede, acesso às máquinas, e o email institucional.</b> Para acessar basta colocar o seu usuário ou email completo e a senha.</p>
-        <p>Caso tenha esquecido a senha, entre em contato com o setor de TI pelo ramal <span class="font-weight-bold">9446</span> ou <span class="font-weight-bold">9447</span> ou também pelo correio eletrônico <a href="mailto:ticentrouniversitario@senacrs.com.br" class="text-white font-weight-bold">ticentrouniversitário@senacrs.com.br</a>.</p>
+        <p>Caso tenha esquecido a senha, entre em contato com o setor de TI pelo ramal <span class="font-weight-bold">RAMAL DO SETOR DE TI</span> ou também pelo correio eletrônico <a href="mailto:*" class="text-white font-weight-bold">EMAIL DO SETOR DE TI</a>.</p>
         <p>Agradecemos a sua atenção.</p>
 
         <div class="btn-container">
