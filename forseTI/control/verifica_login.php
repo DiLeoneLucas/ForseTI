@@ -37,15 +37,20 @@ $id_usuario = $linha['id_user'];
 
 $_SESSION['nome_full'] = $nome_completo;
 
+
 //Se a consulta resultar verdadeiro a sessão é iniciada
 if($controle>0){
 	$ses=rand();
 	session_start();
 	$_SESSION['sessao'] = $ses;
 
-header("Location: tv.php");
-exit();
-	
+	if($id_usuario == '2'){
+		header("Location: tv.php");
+		exit();
+	}
+
+	header("Location: dashboard.php");
 }
+
 
 ?>

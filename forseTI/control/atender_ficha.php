@@ -2,7 +2,7 @@
 require_once("../control/db_classes.php");
 $hostname = gethostname();
 
-$nome = explode("c", $hostname);
+$nome = explode("C", $hostname);
 $pa_n = $nome[1];
 
 require_once("db_classes.php");
@@ -28,6 +28,7 @@ if ($controle > 0) {
 // Recebe os dados via POST
 $id_ficha = isset($_POST['id_ficha']) ? intval($_POST['id_ficha']) : 0;
 $tipo = isset($_POST['tipo']) ? trim($_POST['tipo']) : '';
+$nome_usuário = isset($_POST['nome_na_ficha']) ? trim($_POST['nome_na_ficha']) : '';
 
 // Validação básica
 if ($id_ficha <= 0 || $tipo == '' || $pa == '') {
@@ -52,7 +53,7 @@ if (file_exists($ficha_atual_path)) {
 }
 
 // Gera novo conteúdo para a ficha atual
-$texto_ficha = "$tipo $id_ficha - Atendimento no Guichê $pa";
+$texto_ficha = "$nome_usuário, $tipo ficha Nº $id_ficha,  - Atendimento no Guichê $pa";
 file_put_contents($ficha_atual_path, $texto_ficha);
 
 // Redireciona para a página da fila (ou retorne JSON, se preferir)

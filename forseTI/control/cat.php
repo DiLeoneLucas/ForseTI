@@ -1,8 +1,6 @@
 <?php
 session_start();
-
 $_SESSION['tipo_de_ficha'] = $_POST['option'];
-
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +61,24 @@ $_SESSION['tipo_de_ficha'] = $_POST['option'];
             background-color: #c0392b;
             border-color: #a93226;
         }
+        .btn-indigo {
+            background-color: indigo;
+            border-color: indigo;
+            color: white;
+        }
+        .btn-indigo:hover {
+            background-color: #4b0082;
+            border-color: #3a0066;
+        }
+        .btn-peach {
+            background-color: PeachPuff;
+            border-color: #f5cba7;
+            color: black;
+        }
+        .btn-peach:hover {
+            background-color: #f0b27a;
+            border-color: #e59866;
+        }
         h1 {
             color: white;
         }
@@ -71,8 +87,8 @@ $_SESSION['tipo_de_ficha'] = $_POST['option'];
             max-width: 600px;
         }
         .btn-lg {
-            padding: 25px;
-            font-size: 1.8rem;
+            padding: 10px;
+            font-size: 1.1rem;
         }
         .hidden-button {
             position: fixed;
@@ -97,29 +113,34 @@ $_SESSION['tipo_de_ficha'] = $_POST['option'];
 <body class="d-flex flex-column justify-content-center align-items-center vh-100">
 
     <div class="text-center btn-container">
-        <h1 class="mb-4">SELECIONE A OPÇÃO</h1>
+        <h1 class="mb-4">PARA ATENDIMENTO SELECIONE A OPÇÃO</h1>
 
-        <form action="imprimir.php" method="POST">
+        <form action="form.php" method="POST">
             <input type="hidden" name="option" value="1">
             <button type="submit" class="btn btn-blue btn-lg w-100 mb-3">GRADUAÇÃO</button>
         </form>
 
-        <form action="imprimir.php" method="POST">
-            <input type="hidden" name="option" value="2">
+        <form action="form.php" method="POST">
+            <input type="hidden" name="option" value="4">
             <button type="submit" class="btn btn-orange btn-lg w-100 mb-3">EAD</button>
         </form>
 
-        <form action="imprimir.php" method="POST">
-            <input type="hidden" name="option" value="3">
-            <button type="submit" class="btn btn-green btn-lg w-100 mb-3">TRANSITO</button>
-        </form>
-
-        <form action="imprimir.php" method="POST">
-            <input type="hidden" name="option" value="4">
+        <form action="form.php" method="POST">
+            <input type="hidden" name="option" value="5">
             <button type="submit" class="btn btn-white btn-lg w-100 mb-3">GASTRONOMIA</button>
         </form>
 
-        <form action="imprimir.php" method="POST">
+        <form action="form.php" method="POST">
+            <input type="hidden" name="option" value="6">
+            <button type="submit" class="btn btn-indigo btn-lg w-100 mb-3">PROGRAMA SENAC GRATUIDADE - PSG</button>
+        </form>
+
+        <form action="form.php" method="POST">
+            <input type="hidden" name="option" value="7">
+            <button type="submit" class="btn btn-peach btn-lg w-100 mb-3">MATRÍCULA</button>
+        </form>
+
+        <form action="form.php" method="POST">
             <input type="hidden" name="option" value="5">
             <button type="submit" class="btn btn-red btn-lg w-100 mb-3">INFORMAÇÕES</button>
         </form>

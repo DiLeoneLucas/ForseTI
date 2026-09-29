@@ -17,6 +17,25 @@ if (mysqli_query($connect, $sql)) {
     echo "Erro";
 }
 
+$sql_hora = "SELECT NOW()";
+$objDb = new db();
+$connect = $objDb->conecta_mysql();
+
+// Executa a query
+$result = mysqli_query($connect, $sql_hora);
+
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $horario = $row['NOW()'];  // Pega o valor retornado pela função NOW()
+    
+    $vetor = explode(" ", $horario);
+    $hora = $vetor[1]; // Pega só a parte da hora
+
+} else {
+    echo "Erro na consulta SQL.";
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -185,22 +204,24 @@ if (mysqli_query($connect, $sql)) {
             case 5:
                 $cat = "INFORMAÇÕES";
                 break;
+
+            case 6:
+                $cat = "PSG - Programa Senac Gratuidade";
+                break;
+
+            case 7:
+                $cat = "Matrícula";
+                break;
+            
+            case 7:
+                $cat = "Informações";
+                break;
             
             default:
                 $cat = "ERRO";
         }
         
-        switch($categoria){
-            case 1:
-                $nome = "NORMAL";
-                break;
-            case 2:
-                $nome = "PREFERENCIAL";
-                break;
-            default:
-                $nome = "ERROR";
-        }
-    ?>
+?>
 
     <div class="loading" id="loading">
         <div class="spinner"></div>
@@ -209,9 +230,9 @@ if (mysqli_query($connect, $sql)) {
     </div>
 
     <div class="content print-content">
-        <div class="normal"> <?php echo $nome."<br>".$cat." 0".$num; ?></div>
-        <div class="text">DL Tech</div>
-        <div class="date">Porto Alegre, <?php echo date("d/m/Y H:i"); ?></div>
+        <div class="normal"> <?php echo $categoria."<br>".$cat." 0".$num; ?></div>
+        <div class="text">UniSenac RS - Campus Porto Alegre</div>
+        <div class="date">Porto Alegre, <?php echo date("d/m/Y")." ".$hora; ?></div>
     </div>
 
     <button id="imprimir" class="imprimir" onclick="window.print();">Imprimir</button>
